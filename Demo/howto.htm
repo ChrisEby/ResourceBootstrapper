@@ -6,7 +6,8 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 </head>
 <body>
-	
+	<span id="linuxPlaceholder"></span>
+	<br />
 	<script type="text/javascript" defer="defer" async="async">
 		
 		console.log("Start the fun");
@@ -17,6 +18,11 @@
 			
 			console.log("Add resources to the bootstrapper");
 			ResourceBootstrapper.add("./Scripts/getImages.js");
+			ResourceBootstrapper.add("http://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png", "img", {
+				Width: 265,
+				Height: 314,
+				PlaceholderId: "linuxPlaceholder"
+			});
 			
 			console.log("Attach the ResourceBootstrapper.load to the window.load event");
 			if (window.attachEvent) {
