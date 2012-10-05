@@ -8,23 +8,29 @@ The resource bootstrapper aims at keeping 3rd party references in check. This al
 #### Getting Started
 
 Add a reference to the ResourceBootstrapper:
+<div>
 <script type="text/javascript" src="ResourceBootstrapper.min.js"></script>
+</div>
 
 Add some resources to load up:
-ResourceBootstrapper.add("/some/path/to/a/script.js");
-ResourceBootstrapper.add("//another/path/to/some/other/script.js");
-ResourceBootstrapper.add("//path/to/some/sweet/image.png", "img", {
-		Width: 265,
-		Height: 314,
-		PlaceholderId: "whereverTheImageShouldGo"
-	});
+<div>
+ResourceBootstrapper.add("/some/path/to/a/script.js");<br />
+ResourceBootstrapper.add("//another/path/to/some/other/script.js");<br />
+ResourceBootstrapper.add("//path/to/some/sweet/image.png", "img", {<br />
+		Width: 265,<br />
+		Height: 314,<br />
+		PlaceholderId: "whereverTheImageShouldGo"<br />
+	});<br />
+</div>
 
 Attach the load function to the window load event to keep it from blocking the page load time:
-if (window.attachEvent) {
-	window.attachEvent("onload", ResourceBootstrapper.load);
-}
-else {
-	window.addEventListener("load", ResourceBootstrapper.load, false);
-}
+<div>
+if (window.attachEvent) {<br />
+	window.attachEvent("onload", ResourceBootstrapper.load);<br />
+}<br />
+else {<br />
+	window.addEventListener("load", ResourceBootstrapper.load, false);<br />
+}<br />
+</div>
 
 Enjoy!
