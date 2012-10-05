@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+	<title>ResourceBootstrapper Example</title>
+	<script type="text/javascript" src="../ResourceBootstrapper.js?version=someVersion"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+</head>
+<body>
+	
+	<script type="text/javascript" defer="defer" async="async">
+		
+		console.log("Start the fun");
+		if (typeof ResourceBootstrapper != 'undefined') {
+			
+			console.log("Create a version to use for each of the references");
+			ResourceBootstrapper.version = "someVersion";
+			
+			console.log("Add resources to the bootstrapper");
+			ResourceBootstrapper.add("./Scripts/getImages.js");
+			
+			console.log("Attach the ResourceBootstrapper.load to the window.load event");
+			if (window.attachEvent) {
+				window.attachEvent("onload", ResourceBootstrapper.load);
+			}
+			else {
+				window.addEventListener("load", ResourceBootstrapper.load, false);
+			}
+			
+		}
+		else {
+			console.log("Oh no, something bad happened");
+			debugger;
+		}
+		
+	</script>
+</body>
