@@ -2,7 +2,7 @@
 Author:		Chris Eby
 Company:	JBS, Inc.
 License:	GNU General Public License, version 3 (GPL-3.0)
-Version:	1.0.1
+Version:	1.0.2
 */
 (function () {
 	this.Version = "unknown";
@@ -27,7 +27,7 @@ Version:	1.0.1
 				if (this.Resources[index].Type == "script") {
 					element.type = "text/javascript";
 					element.async = true;
-					element.src = this.Resources[index].Path + "?version=" + this.Version;
+					element.src = this.Resources[index].Path + (this.Resources[index].Path.indexOf('?') >= 0 ? "&" : "?") + "version=" + this.Version;
 					
 					if (this.Resources[index].Properties && this.Resources[index].Properties.Defer)
 						element.defer = this.Resources[index].Properties.Defer;
